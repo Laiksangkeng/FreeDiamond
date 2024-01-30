@@ -6,6 +6,7 @@ public class DeleteFolder {
     public static void main(String[] args) throws InterruptedException {
         Scanner scanner = new Scanner(System.in);
 
+
         do {
             // Menampilkan teks sambutan
             System.out.println("");
