@@ -12,7 +12,7 @@ info_text="\n\n==========================\n\nMaker: Laiksangkeng\nLicense: Star 
 
 echo -e "${white}$info_text${green}\nAre you sure you want to run this script?Please confirm your identity. (Y/N)${reset}"
 
-read -p "\nEnter your choice (Y/N): " user_choice
+read -p "Enter your choice (Y/N): " user_choice
 
 if [[ $user_choice != "Y" && $user_choice != "y" ]]; then
   echo -e "${white}\nScript execution canceled.${reset}"
