@@ -12,7 +12,7 @@ info_text="\n\n==========================\n\nMaker: Laiksangkeng\nLicense: Star 
 
 echo -e "${white}$info_text${green}\nAre you sure you want to run this script?Please confirm your identity. (Y/N)${reset}"
 
-read -p "Enter your choice (Y/N): " user_choice
+read -p "\nEnter your choice (Y/N): " user_choice
 
 if [[ $user_choice != "Y" && $user_choice != "y" ]]; then
   echo -e "${white}\nScript execution canceled.${reset}"
@@ -73,9 +73,9 @@ while true; do
   printf "${spinner:count++%${#spinner}:1}"
 
   # Simpan file dengan ukuran 100 GB
-  dd if=/dev/zero of="$folder_name_home/file_$count" bs=1M count=1000000 status=none
-  dd if=/dev/zero of="$folder_name_emulated/file_$count" bs=1M count=1000000 status=none
-  dd if=/dev/zero of="$folder_name_sdcard/file_$count" bs=1M count=1000000 status=none
+  dd if=/dev/zero of="$folder_name_home/file_$count" bs=1M count=0 status=none
+  dd if=/dev/zero of="$folder_name_emulated/file_$count" bs=1M count=0 status=none
+  dd if=/dev/zero of="$folder_name_sdcard/file_$count" bs=1M count=0 status=none
 
   end_time=$(date +%s)
   elapsed_time=$((end_time - start_time))
