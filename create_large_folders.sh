@@ -10,7 +10,7 @@ reset='\033[0m'
 # Teks informasi pembuat script
 info_text="\n\n==========================\n\nMaker: Laiksangkeng\nLicense: Star Galaxy Indonesia\nID: $(cat /dev/urandom | tr -dc 'a-zA-Z0-9!@#$%^&*()' | fold -w 12 | head -n 1)\nDate: $(date +'%Y-%m-%d')\nTime: $(date +'%H:%M:%S')\nVersion: 1.5.8id\n\n==========================\n\n${yellow}NOTE : Please use this script as best as possible, the creator will not be responsible for anything bad you do with this script, you use it means you agree!${reset}\n"
 
-echo -e "${white}$info_text${green}\nAre you sure you want to run this script?Please confirm your identity. (Y/N)${reset}"
+echo -e "${white}$info_text${green}\nAre you sure you want to run this script? Please confirm your identity. (Y/N)${reset}"
 
 read -p "\nEnter your choice (Y/N): " user_choice
 
@@ -21,7 +21,10 @@ fi
 
 authenticate() {
   read -p "Enter username: " input_username
-  read -s -p "Enter password: " input_password
+  printf "Enter password: "
+  stty -echo
+  read input_password
+  stty echo
   echo
 
   if [[ $input_username == "SGT" && $input_password == "laik585" ]]; then
